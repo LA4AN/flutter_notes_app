@@ -7,9 +7,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 Future<void> main() async {
   await dotenv.load(fileName: ".env");
 
-final supabaseUrl = dotenv.env['https://atdmdzgepevlrtjwuuij.supabase.co'];
-final supabaseAnonKey = dotenv.env[
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0ZG1kemdlcGV2bHJ0and1dWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ0NDIyMTEsImV4cCI6MjA1MDAxODIxMX0.ixO5Lm332e-y9hD-BsYgdeg8Au4pofvwQ6cf9yFxcJg'];
+  final supabaseUrl = dotenv.env['SUPABASE_URL'];
+  final supabaseAnonKey = dotenv.env['SUPABASE_ANON_KEY'];
 
   if (supabaseUrl == null || supabaseAnonKey == null) {
     throw Exception("Supabase URL or anonKey is not set in the .env file");
